@@ -5,9 +5,9 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'app/group/group.html',
+        controller: 'GroupCtrl',
+        controllerAs: 'groups'
       });
 
     $urlRouterProvider.otherwise('/');
