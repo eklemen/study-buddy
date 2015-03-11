@@ -1,22 +1,27 @@
 <h3>{{'Create a Group'}}</h3>
-<form ng-submit='groups.addGroup(groups.newGroup)'>
-    <label for="subject">Subject</label>
-    <input type="text" value="subject" ng-model="groups.newGroup.subject" required>
-    <br>
-    <label for="class">Class</label>
-    <input type="text" value="class" ng-model="groups.newGroup.class" required>
-    <br>
-    <label for="select">Section</label>
-    <select value="select" ng-model="groups.newGroup.section" required>
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="C">C</option>
-        <option value="D">D</option>
-        <option value="E">E</option>
-    </select>
-    <button>Submit</button>
-</form>
-
+<div>
+    <form ng-submit='groups.addGroup(groups.newGroup)'>
+        <div>
+            <label for="subject">Subject</label>
+            <input type="text" value="subject" ng-model="groups.newGroup.subject" required>
+        </div>
+        <div>
+            <label for="class">Class</label>
+            <input type="text" value="class" ng-model="groups.newGroup.class" required>
+        </div>
+        <div>
+            <label for="select">Section</label>
+            <select value="select" ng-model="groups.newGroup.section" required>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+            </select>
+            <button>Submit</button>
+        </div>
+    </form>
+</div> <!-- end form -->
 <div ng-repeat="group in groups.obj">
     <span>{{group.subject}}</span>
     <span>{{group.class}}</span>
