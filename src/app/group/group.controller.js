@@ -1,21 +1,25 @@
 'use strict';
 
 angular.module('studyBuddy')
-    .controller('GroupCtrl', ["$firebaseArray", function($firebaseArray){
-        var ref = new Firebase('https://study-buddy.firebaseio.com/');
-        
-        this.groupList = [];
+    .controller('GroupCtrl', function($firebaseObject, $firebaseArray){
+        var ref = new Firebase('https://study-buddy.firebaseio.com/groups');
+        this.obj = $firebaseArray(ref);
+        console.log(this.obj);
+        this.groupsObject = {};
         
         this.newGroup = {
             subject: '',
             class: ''
         };
         
-        this.addGroup = function(newGroup){
-            ref.push(this.newGroup);
-            console.log(this.newGroup);
+        this.addGroup = function(group){
+            this.obj.$add(group);
+            return this.newGroup = {
+                subject: '',
+                class: ''
+            };
         };
         
         
-    }])
+    })
 ;
