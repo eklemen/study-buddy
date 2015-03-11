@@ -9,14 +9,16 @@ angular.module('studyBuddy')
         
         this.newGroup = {
             subject: '',
-            class: ''
+            class: '',
+            section: ''
         };
         
         this.addGroup = function(group){
             this.obj.$add(group);
             return this.newGroup = {
                 subject: '',
-                class: ''
+                class: '',
+                section: ''
             };
         };
         
