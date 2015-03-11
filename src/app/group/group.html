@@ -1,9 +1,35 @@
 <h3>Enter Info</h3>
-<form action="">
-    <input type="text" ng-model="group.subject">
-    <input type="text" ng-model="group.class">
-    <select name="" id="">
-        <option value="option1" ng-repeat="test in group.tester">{{test}}</option>
-    </select>
-    <p>{{"Hi"}}</p>
+<form ng-submit='groups.addGroup()'>
+    <input type="text" ng-model="groups.newSubject">
+    <input type="text" ng-model="groups.newClass">
 </form>
+<p>{{groupList.newSubject}}</p>
+<p>{{newClass}}</p>
+<div ng-repeat="group in groups.groupList">
+    <span>{{group.subject}}</span>
+    <span></span>
+</div>
+
+
+
+
+<!--
+
+
+<section id='tasklist' ng-controller='TaskController as tasks'> 
+<div class='additem'>	
+    <form ng-submit='tasks.addItem()'>
+        <input type='text' ng-model='tasks.newTodoItem' 
+        placeholder="Add a task...">	
+    </form>
+</div>
+<p>{{newTodoItem}}</p>	
+
+<ul>	 
+        <li ng-repeat='todoItem in tasks.todoItems'>
+        <input type='checkbox' ng-model='todoItem.completed'>	
+        <span ng-class='{finished: todoItem.completed}'>
+        {{todoItem.task}}</span></li>
+</ul>
+
+-->
