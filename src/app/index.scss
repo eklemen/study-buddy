@@ -2,8 +2,33 @@
 .container {
     width: 90%;
     margin: 0 auto;
+    text-align: center;
     
-
+    #login-box{
+        display: inline-block;
+        width: 20em;
+        height: 35ex;
+        background-color: antiquewhite;
+        border-radius: 2ex;
+        text-align: center;
+        position: relative;
+        
+        #login {
+            text-decoration: none;
+            display: inline-block;
+            background-color: #4e69a2;
+            color: white;
+            padding: 2ex 1em;
+            position: absolute;
+            left: 4.5em;
+            top: 40%;
+            border-radius: 1ex;
+        }
+        #login:hover {
+            box-shadow: -2px 2px 8px #888;
+        }
+    } // login-box
+    
     .create-form {
         .input-box {
             width: 100%;
