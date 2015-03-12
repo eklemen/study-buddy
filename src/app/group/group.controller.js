@@ -20,7 +20,7 @@ angular.module('studyBuddy')
                 class: '',
                 section: ''
             };
-        };
+        }; 
         
         
     })
