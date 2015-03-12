@@ -21,11 +21,36 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
         templateUrl: 'app/group/group.html',
         controller: 'GroupCtrl',
         controllerAs: 'groups'
-})
+    })
 ; //end of states
 
     $urlRouterProvider.otherwise('/');
   })
 
+    .factory('Auth', function($firebaseObject){
+        var auth = new Firebase('https://study-buddy.firebaseio.com/groups');
+        var currentUser = {};
+        
+        return {
+            
+            onAuth: function(creds){
+                auth.onAuth(function(data){
+                    creds(updateUser(data));
+                })
+            },
+            
+            fbLogin: function(){
+                return auth.authWithOAuthPopup("facebook", function(error, authData) {
+                    console.log(authData)
+                if (error) {
+                    console.log("Login Failed!", error);
+                } else {
+                    console.log("Authenticated successfully with payload:", authData);
+        }
+      }, {remember: "sessionOnly"})
+    },
+            }
+        };
+}) //end auth factory
 
 ; // end of config
