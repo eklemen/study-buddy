@@ -46,11 +46,27 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
                     console.log("Login Failed!", error);
                 } else {
                     console.log("Authenticated successfully with payload:", authData);
-        }
-      }, {remember: "sessionOnly"})
-    },
+                }
+                }, {remember: "sessionOnly"})
+            },
+            
+            logout: function(){
+                auth.unauth();
+                console.log("goodbye")
+            },
+            
+            loggedIn: function(){
+                if(auth.getAuth()){
+                    return true;
+                }
             }
-        };
+        }; //end return
+    function updateUser(authdUser){
+        console.log(authdUser)
+        if(authdUser === null){
+            return null;
+        }
+    }
 }) //end auth factory
 
 ; // end of config
