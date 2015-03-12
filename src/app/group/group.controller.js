@@ -3,54 +3,55 @@
 angular.module('studyBuddy')
     .controller('GroupCtrl', function($firebaseObject, $firebaseArray, groupFactory){
 //        var ref = new Firebase('https://study-buddy.firebaseio.com/groups');
-//        this.obj = $firebaseArray(ref);
-//        console.log("banana");
-//        console.log(groupFactory.myData);
+//        this.obj = $firebaseArray(groupFactory.ref);
+        console.log("banana");
+        console.log(groupFactory.myData);
+        this.obj = groupFactory.obj;
+        this.addGroup = groupFactory.addgroup;
 //        this.groupsObject = {};
-//        
+        
 //        this.newGroup = {
 //            subject: '',
 //            class: '',
 //            section: ''
 //        };
-//        
+        
 //        this.addGroup = function(group){
-//            this.obj.$add(group);
-//            return this.newGroup = {
+//            groupFactory.obj.$add(group);
+//            return groupFactory.newgroup = {
 //                subject: '',
-//                class: '',
-//                section: ''
+//            class: '',
+//            section: ''
 //            };
 //        };
-        console.log(groupFactory.newgroup);
         
     }) //controller
     
     .factory('groupFactory', function($firebaseObject, $firebaseArray){
         var ref = new Firebase('https://study-buddy.firebaseio.com/groups');
-        this.obj = $firebaseArray(ref);
-        console.log("banana");
-        this.groupsObject = {};
-    
-        this.newGroup = {
+        var obj = $firebaseArray(ref);
+        var groupsObject = {};
+        var newGroup = {
             subject: '',
             class: '',
             section: ''
         };
-        
-        this.addGroup = function(group){
-            this.obj.$add(group);
-            return this.newGroup = {
+        var addGroup = function(group){
+            obj.$add(group);
+            return newGroup = {
                 subject: '',
                 class: '',
                 section: ''
-            };
-        };
-        return {
-            newgroup: this.obj,
-            myData: "nut-bread"
-            
             }
+        };
+    
+        return {
+            ref: ref,
+            obj: obj,
+            groupsobject: groupsObject,
+            newgroup: newGroup,
+            addgroup: addGroup,
+            myData: "nut-bread"
         }
 })
 
