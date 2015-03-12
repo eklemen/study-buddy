@@ -7,7 +7,11 @@ angular.module('studyBuddy')
         console.log("banana");
         console.log(groupFactory.myData);
         this.obj = groupFactory.obj;
+        
+        this.newGroup = groupFactory.newgroup;
         this.addGroup = groupFactory.addgroup;
+//        console.log(groupFactory.newgroup);
+    
 //        this.groupsObject = {};
         
 //        this.newGroup = {
@@ -30,7 +34,6 @@ angular.module('studyBuddy')
     .factory('groupFactory', function($firebaseObject, $firebaseArray){
         var ref = new Firebase('https://study-buddy.firebaseio.com/groups');
         var obj = $firebaseArray(ref);
-        var groupsObject = {};
         var newGroup = {
             subject: '',
             class: '',
@@ -38,21 +41,22 @@ angular.module('studyBuddy')
         };
         var addGroup = function(group){
             obj.$add(group);
-            return newGroup = {
+            console.log(newGroup);
+            newGroup = {
                 subject: '',
                 class: '',
                 section: ''
-            }
+            };
+            return newGroup;
         };
     
         return {
-            ref: ref,
             obj: obj,
-            groupsobject: groupsObject,
             newgroup: newGroup,
             addgroup: addGroup,
             myData: "nut-bread"
         }
+        
 })
 
 ;
