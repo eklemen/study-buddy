@@ -26,4 +26,6 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
 
     $urlRouterProvider.otherwise('/');
   })
+
+
 ; // end of config
