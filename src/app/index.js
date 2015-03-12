@@ -10,7 +10,7 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
         controller: 'MainController',
         controllerAs: 'main'
     })
-        .state('dashboard', {
+        .state('dashboardangular ', {
         url: '/dashboard',
         templateUrl: 'app/dashboard/dashboard.html',
         controller: 'DashboardController',
