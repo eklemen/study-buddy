@@ -10,6 +10,12 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
         controller: 'MainController',
         controllerAs: 'main'
     })
+        .state('dashboard', {
+        url: '/dashboard',
+        templateUrl: 'app/dashboard/dashboard.html',
+        controller: 'DashboardController',
+        controllerAs: 'dash'
+    })
         .state('group', {
         url: '/create_group',
         templateUrl: 'app/group/group.html',
