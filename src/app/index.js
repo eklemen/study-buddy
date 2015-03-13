@@ -45,7 +45,7 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
                 if (error) {
                     console.log("Login Failed!", error);
                 } else {
-                    console.log("Authenticated successfully with payload:", authData);
+                    console.log("Authenticated successfully");
                 }
                 }, {remember: "sessionOnly"})
             },

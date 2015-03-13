@@ -5,7 +5,6 @@ angular.module('studyBuddy')
         var self = this;
         var userInfo = new Firebase('https://study-buddy.firebaseio.com/users');
         this.obj = $firebaseArray(userInfo);
-        console.log(this.obj);
         this.userArray = {};
         
     this.fbLogin = Auth.fbLogin;
