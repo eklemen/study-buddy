@@ -13,8 +13,6 @@ angular.module('studyBuddy')
         self.user = user;
         if(user === null){
             console.log('null');
-        } else {
-            console.log(user);
         }
     });
     

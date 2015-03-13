@@ -5,7 +5,6 @@ angular.module('studyBuddy')
         var ref = new Firebase('https://study-buddy.firebaseio.com/groups');
         this.obj = $firebaseArray(ref);
         console.log("banana");
-        this.groupsObject = {};
         
         this.newGroup = {
             subject: '',

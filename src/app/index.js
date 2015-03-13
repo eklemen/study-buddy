@@ -27,7 +27,7 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
     $urlRouterProvider.otherwise('/');
   })
 
-    .factory('Auth', function($firebaseObject){
+    .factory('Auth', function($firebaseObject, $state){
         var auth = new Firebase('https://study-buddy.firebaseio.com/groups');
         var currentUser = {};
         
@@ -45,6 +45,7 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
                 if (error) {
                     console.log("Login Failed!", error);
                 } else {
+                    $state.go('group');
                     console.log("Authenticated successfully");
                 }
                 }, {remember: "sessionOnly"})
@@ -66,7 +67,20 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
         if(authdUser === null){
             return null;
         }
+        //way to set facebookID as a child of users in fb object
+        var fbID = auth.child('users').child(authdUser.facebook.id); 
+        
+        var ref = new Firebase('https://study-buddy.firebaseio.com/user/' + authdUser.facebook.id);
+        var obj = $firebaseArray(ref);
+        // sending this info to firebase
+        fbID.update({
+            fb: authdUser.facebook,
+            uid: authdUser.facebook.id,
+            fullName: authdUser.facebook.displayName,
+            group: obj
+        });
     }
+    
 }) //end auth factory
 
 ; // end of config
