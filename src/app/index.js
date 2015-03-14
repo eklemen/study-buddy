@@ -28,8 +28,7 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
   })
 
     .factory('Auth', function($firebaseObject, $state){
-        var auth = new Firebase('https://study-buddy.firebaseio.com/groups');
-        var currentUser = {};
+        var auth = new Firebase('https://study-buddy.firebaseio.com/users');
         
         return {
             
@@ -53,7 +52,8 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
             
             logout: function(){
                 auth.unauth();
-                console.log("goodbye")
+                $state.go('home');
+                console.log("goodbye");
             },
             
             loggedIn: function(){
@@ -62,23 +62,25 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
                 }
             }
         }; //end return
-    function updateUser(authdUser){
+    function updateUser(authdUser, $firebaseArray){
         console.log(authdUser)
         if(authdUser === null){
             return null;
         }
         //way to set facebookID as a child of users in fb object
-        var fbID = auth.child('users').child(authdUser.facebook.id); 
+        var user = auth.child(authdUser.facebook.id); 
         
-        var ref = new Firebase('https://study-buddy.firebaseio.com/user/' + authdUser.facebook.id);
-        var obj = $firebaseArray(ref);
         // sending this info to firebase
-        fbID.update({
+        user.update({
             fb: authdUser.facebook,
             uid: authdUser.facebook.id,
-            fullName: authdUser.facebook.displayName,
-            group: obj
+            fullName: authdUser.facebook.displayName
         });
+        
+        user = $firebaseObject(
+            auth.child(authdUser.facebook.id)
+        );
+        return user;
     }
     
 }) //end auth factory
