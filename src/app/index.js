@@ -77,9 +77,9 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
             fullName: authdUser.facebook.displayName
         });
         
-//        user = $firebaseObject(
-//            auth.child(authdUser.facebook.id)
-//        );
+        user = $firebaseObject(
+            auth.child(authdUser.facebook.id)
+        );
         return user;
     }
     
