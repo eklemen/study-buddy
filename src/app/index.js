@@ -62,6 +62,7 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
                 }
             }
         }; //end return
+    
     function updateUser(authdUser, $firebaseArray){
         console.log(authdUser)
         if(authdUser === null){
@@ -72,8 +73,8 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
         
         // sending this info to firebase
         user.update({
+            uid: authdUser.uid,
             fb: authdUser.facebook,
-            uid: authdUser.facebook.id,
             name: authdUser.facebook.displayName
         });
         
