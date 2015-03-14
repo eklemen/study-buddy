@@ -74,7 +74,7 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
         user.update({
             fb: authdUser.facebook,
             uid: authdUser.facebook.id,
-            fullName: authdUser.facebook.displayName
+            name: authdUser.facebook.displayName
         });
         
         user = $firebaseObject(
