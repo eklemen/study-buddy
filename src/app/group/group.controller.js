@@ -8,23 +8,23 @@ angular.module('studyBuddy')
         self.user = user;
     });
     console.log(self);
-    var ref = new Firebase('https://study-buddy.firebaseio.com/users' + self.user.$id + '/group');
-    this.obj = $firebaseObject(ref); 
+    var ref = new Firebase('https://study-buddy.firebaseio.com/users/' + self.user.$id);
+    self.obj = $firebaseObject(ref); 
         
-        this.newGroup = {
+        self.newGroup = {
             subject: '',
             class: '',
             section: ''
         };
-        
+        console.log(self.obj);
         this.addGroup = function(group){
-            self.obj.$add(group);
-            return this.newGroup = {
+            self.obj.update(group);
+            return self.newGroup = {
                 subject: '',
                 class: '',
                 section: ''
             };
-        }; 
+        };
         
         
     })
