@@ -22,6 +22,12 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
         controller: 'GroupCtrl',
         controllerAs: 'groups'
     })
+        .state('list', {
+        url: '/list',
+        templateUrl: 'app/list/list.html',
+        controller: 'ListController',
+        controllerAs: 'list'
+    })
 ; //end of states
 
     $urlRouterProvider.otherwise('/');
