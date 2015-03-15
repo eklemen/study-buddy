@@ -35,6 +35,7 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
 
     .factory('Auth', function($firebaseObject, $state){
         var auth = new Firebase('https://study-buddy.firebaseio.com/users');
+//        var groupList = new Firebase('https://study-buddy.firebaseio.com/groups')
         
         return {
             
@@ -50,7 +51,7 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
                 if (error) {
                     console.log("Login Failed!", error);
                 } else {
-                    $state.go('group');
+                    $state.go('dashboard');
                     console.log("Authenticated successfully");
                 }
                 }, {remember: "sessionOnly"})
@@ -65,6 +66,8 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
             loggedIn: function(){
                 if(auth.getAuth()){
                     return true;
+                } else {
+                    $state.go('home');
                 }
             }
         }; //end return
