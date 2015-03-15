@@ -25,7 +25,6 @@ angular.module('studyBuddy')
                 section: ''
             };
         };
-//        this.obj = $firebaseObject(ref);
         console.log(this.obj);
         
     })
