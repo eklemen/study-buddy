@@ -7,7 +7,7 @@ angular.module('studyBuddy')
         self.user = user;
     });
 
-    var ref = new Firebase('https://study-buddy.firebaseio.com/groups/');
+    var ref = new Firebase('https://study-buddy.firebaseio.com/groups/' + self.user.$id);
     this.obj = $firebaseArray(ref); 
         
     this.newGroup = {
