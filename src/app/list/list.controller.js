@@ -4,7 +4,9 @@ angular.module('studyBuddy')
     Auth.onAuth(function(user, authdUser){
         self.user = user;
     });
-    var ref = new Firebase('https://study-buddy.firebaseio.com/groups');
-    this.obj = $firebaseArray(ref);
+    var ref = new Firebase('https://study-buddy.firebaseio.com/groups/');
+    var childs = ref.child('users').child(self.user.$id)
+    this.obj = $firebaseObject(childs);
+    console.log(this.obj));
     
 })

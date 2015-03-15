@@ -35,7 +35,7 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
 
     .factory('Auth', function($firebaseObject, $state){
         var auth = new Firebase('https://study-buddy.firebaseio.com/users');
-//        var groupList = new Firebase('https://study-buddy.firebaseio.com/groups')
+        var myGroup = new Firebase('https://study-buddy.firebaseio.com/groups');
         
         return {
             
@@ -79,12 +79,13 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
         }
         //way to set facebookID as a child of users in fb object
         var user = auth.child(authdUser.facebook.id); 
-        
+        var fbCach = authdUser.facebook.cachedUserProfile;
         // sending this info to firebase
         user.update({
-            uid: authdUser.uid,
+            uid: authdUser.facebook.id,
             fb: authdUser.facebook,
-            name: authdUser.facebook.displayName
+            name: fbCach.first_name,
+            photo: fbCach.picture.data.url
         });
         
         user = $firebaseObject(
