@@ -6,19 +6,16 @@ angular.module('studyBuddy')
     Auth.onAuth(function(user, authdUser){
         self.user = user;
     });
-
+    
     var ref = new Firebase('https://study-buddy.firebaseio.com/groups/' + self.user.$id);
     this.obj = $firebaseArray(ref); 
         
     this.newGroup = {
-            subject: '',
-            class: '',
-            section: '',
             creator: self.user.$id
         };
 
         this.addGroup = function(group){
-            this.obj.$add(group);
+            ref.update(group);
             return this.newGroup = {
                 subject: '',
                 class: '',
@@ -26,6 +23,7 @@ angular.module('studyBuddy')
             };
         };
         console.log(this.obj);
+//        console.log(Auth.updateUser());
         
     })
 ;

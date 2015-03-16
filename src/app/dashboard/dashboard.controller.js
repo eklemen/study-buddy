@@ -2,6 +2,9 @@
 
 angular.module('studyBuddy')
     .controller('DashboardController', function(Auth){
-    this.logout = Auth.logout;
-    this.loggedIn = Auth.loggedIn;
+    var self = this;
+    Auth.onAuth(function(user, authdUser){
+        self.user = user;
+    });
+    
 })

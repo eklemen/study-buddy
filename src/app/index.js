@@ -35,7 +35,6 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
 
     .factory('Auth', function($firebaseObject, $state){
         var auth = new Firebase('https://study-buddy.firebaseio.com/users');
-        var myGroup = new Firebase('https://study-buddy.firebaseio.com/groups');
         
         return {
             
@@ -69,7 +68,20 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
                 } else {
                     $state.go('home');
                 }
-            }
+            },
+            
+//            updateUser: function(authdUser, $firebaseArray){
+//                console.log(authdUser);
+//                if (authdUser === null){
+//                    return null;
+//                }
+//                var user = auth.child(authdUser.facebook.id);
+//                user.update({
+//                    uid: authdUser.facebook.id,
+//                    fb: authdUser.facebook,
+//                    name: authdUser.facebook.displayName,
+//                })
+//            }
         }; //end return
     
     function updateUser(authdUser, $firebaseArray){
