@@ -77,7 +77,7 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
             }
         }; //end return
     
-    function updateUser(authdUser, $firebaseArray){
+    function updateUser(authdUser){
         console.log(authdUser)
         if(authdUser === null){
             return null;
