@@ -28,6 +28,12 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
         controller: 'ListController',
         controllerAs: 'list'
     })
+        .state('manage', {
+        url: '/manage',
+        templateUrl: 'app/manage/manage.html',
+        controller: 'ManageController',
+        controllerAs: 'manage'
+    })
 ; //end of states
 
     $urlRouterProvider.otherwise('/');
@@ -68,20 +74,7 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
                 } else {
                     $state.go('home');
                 }
-            },
-            
-//            updateUser: function(authdUser, $firebaseArray){
-//                console.log(authdUser);
-//                if (authdUser === null){
-//                    return null;
-//                }
-//                var user = auth.child(authdUser.facebook.id);
-//                user.update({
-//                    uid: authdUser.facebook.id,
-//                    fb: authdUser.facebook,
-//                    name: authdUser.facebook.displayName,
-//                })
-//            }
+            }
         }; //end return
     
     function updateUser(authdUser, $firebaseArray){
@@ -92,7 +85,7 @@ angular.module('studyBuddy', ['restangular', 'ui.router', 'firebase'])
         //way to set facebookID as a child of users in fb object
         var user = auth.child(authdUser.facebook.id); 
         var fbCach = authdUser.facebook.cachedUserProfile;
-        // sending this info to firebase
+        // sending this info to firebase updating user info
         user.update({
             uid: authdUser.facebook.id,
             fb: authdUser.facebook,
