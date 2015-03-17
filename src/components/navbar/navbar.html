@@ -1,9 +1,11 @@
-<nav class="navbar" ng-controller="NavbarController as nav">
-    <ul>
-        <a ui-sref="dashboard"><li>Home</li></a>
-        <a ui-sref="group"><li>Create A Group</li></a>
-        <a ui-sref="list"><li>Look for A Group</li></a>
-        <a ui-sref="manage"><li>Manage Your Group</li></a>
-        <a ui-sref="home" ng-click="nav.logout()"><li>Logout</li></a>
-    </ul>
+<nav class="navbar navbar-inverse" ng-controller="NavbarController as nav">
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li><a ui-sref="dashboard">Home</a></li>
+            <li><a ui-sref="group">Create</a></li>
+            <li><a ui-sref="list">Search</a></li>
+            <li><a ui-sref="manage">Manage</a></li>
+            <li><a ui-sref="home" ng-click="nav.logout()">Logout</a></li>
+        </ul>
+    </div>    
 </nav>
