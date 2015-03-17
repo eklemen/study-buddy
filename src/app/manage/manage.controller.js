@@ -1,17 +1,23 @@
 'use strict';
 
 angular.module('studyBuddy')
-    .controller('ManageController', function($firebaseObject, Auth){
+    .controller('ManageController', function($firebaseObject, $firebaseArray, Auth){
     var self = this;
     Auth.onAuth(function(user, authdUser){
         self.user = user;
     });
     
     var myRef = new Firebase('https://study-buddy.firebaseio.com/groups/' + self.user.$id);
-    this.arr = $firebaseObject(myRef);
+    this.obj = $firebaseObject(myRef);
+    this.arr = $firebaseArray(myRef);
     
+    this.update = {};
     this.edit = function(info){
         myRef.update(info);
+        return this.update = {};
+    };
+    this.delete = function(group){
+        myRef.remove(group);
     }
 })
 ; //end controller

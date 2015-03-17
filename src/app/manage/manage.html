@@ -1,14 +1,15 @@
 
 <div>
-    <span ng-hide="editing">{{manage.arr.subject}}</span>
-    <span ng-hide="editing">{{manage.arr.class}}</span>
-    <span ng-hide="editing">{{manage.arr.section}}</span>
-    <button ng-hide="editing" ng-click="editing = true">Edit</button>
-    <button>Delete</button>
-    <form ng-show="editing" ng-submit="">
-            <input type="text" placeholder={{manage.arr.subject}}>
-            <input type="text" placeholder={{manage.arr.class}}>
-            <input type="text" placeholder={{manage.arr.section}}>
+    <span ng-hide="editing">{{manage.obj.subject}}</span>
+    <span ng-hide="editing">{{manage.obj.class}}</span>
+    <span ng-hide="editing">{{manage.obj.section}}</span>
+<!--    <span ng-hide="manage.arr.length<1">You do not have a group active</span>-->
+    <button ng-hide="editing || manage.arr.length<1" ng-click="editing = true">Edit</button>
+    <button ng-hide="manage.arr.length<1" ng-click="manage.delete(group)">Delete</button>
+    <form ng-show="editing" ng-submit="manage.edit(manage.update)">
+            <input ng-model="manage.update.subject" type="text" placeholder={{manage.obj.subject}}>
+            <input ng-model="manage.update.class" type="text" placeholder={{manage.obj.class}}>
+            <input ng-model="manage.update.section" type="text" placeholder={{manage.obj.section}}>
             <button ng-show="editing" ng-click="editing = false">Save</button>
     </form>
 </div>

@@ -8,10 +8,6 @@ angular.module('studyBuddy')
     var myRef = new Firebase('https://study-buddy.firebaseio.com/groups/' + self.user.$id);
     this.obj = $firebaseArray(ref);
     
-    // delete function
-    this.delete = function(group){
-        myRef.remove(group);
-    }
     console.log('banana');
 })
 ;
