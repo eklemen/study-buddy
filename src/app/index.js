@@ -77,7 +77,7 @@ angular.module('studyBuddy', ['ngAnimate', 'restangular', 'ui.router', 'ui.boots
         }; //end return
     
     function updateUser(authdUser){
-        console.log(authdUser)
+//        console.log(authdUser)
         if(authdUser === null){
             return null;
         }

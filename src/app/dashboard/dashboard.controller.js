@@ -6,6 +6,7 @@ angular.module('studyBuddy')
     Auth.onAuth(function(user, authdUser){
         self.user = user;
     });
+    Auth.loggedIn();
     
 })
 ;

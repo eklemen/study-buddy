@@ -6,6 +6,7 @@ angular.module('studyBuddy')
     Auth.onAuth(function(user, authdUser){
         self.user = user;
     });
+    Auth.loggedIn();
     
     var myRef = new Firebase('https://study-buddy.firebaseio.com/groups/' + self.user.$id);
     this.obj = $firebaseObject(myRef);

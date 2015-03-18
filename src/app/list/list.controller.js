@@ -1,6 +1,7 @@
 'use strict';
 angular.module('studyBuddy')
     .controller("ListController", function($firebaseObject, $firebaseArray, Auth){
+    Auth.loggedIn();
     var self = this;
     Auth.onAuth(function(user, authdUser){
         self.user = user;
