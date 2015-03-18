@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('studyBuddy', ['ngAnimate', 'restangular', 'ui.router', 'ui.bootstrap', 'firebase'])
+angular.module('studyBuddy', ['ngAnimate', 'restangular', 'ui.router', 'ui.bootstrap', 'firebase', 'sticky'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
