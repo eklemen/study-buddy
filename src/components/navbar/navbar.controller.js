@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('studyBuddy')
-  .controller('NavbarCtrl', function ($scope) {
-    $scope.date = new Date();
-  });
+  .controller('NavbarController', function (Auth) {
+    this.logout = Auth.logout;
+  })
+;
