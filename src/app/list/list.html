@@ -1,0 +1,7 @@
+<h3>Active Groups</h3>
+<input ng-model="searchText" placeholder="Search">
+<div ng-repeat="group in list.arr | filter:searchText">
+    <span>{{group.subject}}</span>
+    <span>{{group.class}}</span>
+    <span>{{group.section}}</span>
+</div>
