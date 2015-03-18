@@ -11,5 +11,6 @@ angular.module('studyBuddy')
     this.arr = $firebaseArray(ref);
     
     console.log('banana');
+    
 })
 ;

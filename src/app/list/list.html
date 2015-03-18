@@ -1,11 +1,19 @@
 <div class="input-group"><input ng-model="searchText" placeholder="Search"></div>
+
+<div class="map">
+    <img class="lib-pic" src="../../assets/images/lib.png">
+</div>
 <div class="panel panel-info">
     <div class="panel-heading">
         <h3 class="panel-title">Active Groups</h3>
     </div>
     <div ng-repeat="group in list.arr | filter:searchText">
-        <span>{{group.subject}}</span>
-        <span>{{group.class}}</span>
-        <span>{{group.section}}</span>
+        <table class="table list">
+            <tr>
+                <td>{{group.subject}}</td>
+                <td>{{group.class}}</td>
+                <td>{{group.section}}</td>
+            </tr>
+        </table>        
     </div>
 </div>    
