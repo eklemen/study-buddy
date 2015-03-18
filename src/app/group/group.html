@@ -1,19 +1,19 @@
 <a ng-click="groups.logout" ui-sref="home">Logout</a>
 <h3>{{'Create a Group'}}</h3>
 <div>
-    <form class="create-form" ng-submit='groups.addGroup(groups.newGroup)'>
-        <div class="input-box">
+    <form ng-submit='groups.addGroup(groups.newGroup)' role="form">
+        <div class="form-group">
             <label for="subject">Subject</label>
-            <input class="create-input" type="text" value="subject" 
+            <input class="form-control" type="text" value="subject" 
                 ng-model="groups.newGroup.subject" required>
         </div>
-        <div class="input-box">
+        <div class="form-group">
             <label for="class">Class</label>
-            <input class="create-input" type="text" value="class" ng-model="groups.newGroup.class" required>
+            <input class="form-control" type="text" value="class" ng-model="groups.newGroup.class" required>
         </div>
-        <div class="input-box">
+        <div class="form-group">
             <label for="select">Section</label>
-            <select class="create-input sections" value="select" ng-model="groups.newGroup.section" required>
+            <select class="form-control sections" value="select" ng-model="groups.newGroup.section" required>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
@@ -21,7 +21,7 @@
                 <option value="E">E</option>
             </select>
         </div>
-        <button id="create-submit">Submit</button>
+        <button class="btn btn-primary">Submit</button>
     </form>
     <a ui-sref="list">Click here to see List</a>
 </div> <!-- end form -->

@@ -5,6 +5,12 @@
   padding: 0.2em 0;
 }
 
+.navbar-inverse .navbar-nav li a:hover {
+	background-color: #313131;
+	transition: 0.3s all linear;
+//	height: 100%;
+}
+
 .thumbnail {
   height: 200px;
 
