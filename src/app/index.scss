@@ -2,6 +2,23 @@ a:hover {
     text-decoration: none;
 }
 
+#login-box {
+    text-align: center;
+    position: relative;
+    #login {
+        .glyphicon {
+            font-size: 10em;
+        }
+        .fa {
+            position: absolute;
+            right: 46%;
+            top: 1ex;
+            font-size: 6em;
+            color: white;
+        }
+    }
+}
+
 .map{
     text-align: center;
     .lib-pic {
