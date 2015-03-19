@@ -1,5 +1,6 @@
-
-<div sticky class="input-group"><input ng-model="searchText" placeholder="Search"></div>
+<div class="list-view-container">
+<div sticky class="input-group col-sm-12"><input ng-model="searchText" placeholder="Search">
+</div>
 <div class="list-view">
     <div class="map">
         <img class="lib-pic" src="../../assets/images/lib.png">
@@ -13,9 +14,24 @@
                 <tr>
                     <td>{{group.subject}}</td>
                     <td>{{group.class}}</td>
-                    <td>{{group.section}}</td>
+                    <td>
+                        <span class="dropdown" dropdown on-toggle="toggled(open)">
+                            <a href class="dropdown-toggle" dropdown-toggle>
+                        {{group.section}}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href><img class="popup-map" src="../../assets/images/lib.png"></a>
+                                </li>
+                            </ul>
+                        </span>
+                    </td>
                 </tr>
             </table>        
         </div>
     </div>    
 </div>
+</div>
+
+
+<!-- </span>{{group.section}}</td>-->

@@ -20,39 +20,60 @@ a:hover {
     }
 }
 
-.map{
-    text-align: center;
-    .lib-pic {
-        height: 300px;
-        width: 250px;
+/* GROUP */
+.group-view {
+    form {
+        .submit {
+            margin-right: 1em;
+        }
     }
 }
 
-.input-group {
-    
-    width: 100%;
-//    position: fixed;
-    input {
-        border-right: none;
-        border-left: none;
-        border-top: none;
-        line-height: 4ex;
-        width: 100%;
+/* LIST */
+.list-view-container{
+    .map{
+        text-align: center;
+        .lib-pic {
+            height: 300px;
+            width: 250px;
+        }
     }
-}
-.list-view{
-    .panel {
-        .list {
-            tr{
-                td{
-                    width: 33%;
-                    text-align: center;
-                    font-weight: bolder;
+    .input-group {
+        width: 100%;
+        input {
+            border-right: none;
+            border-left: none;
+            border-top: none;
+            line-height: 4ex;
+            width: 100%;
+        }
+    }
+    
+    .list-view{
+        .panel {
+            .list {
+                tr{
+                    td{
+                        width: 33%;
+                        text-align: center;
+                        font-weight: bolder;
+                        
+                        .dropdown-menu{
+                            left: -12em;
+                            .popup-map {
+                                height: 28ex;
+                                width: 14em;
+                            }
+                        }
+                    }
                 }
             }
         }
+    }
 }
-}
+/*end list */
+
+/* MANAGE */
 .manage-page {
     td{
         width: 33%;
@@ -62,8 +83,10 @@ a:hover {
     button {
         @extend .col-sm-6;
     }
-}
-// dashboard 
+} //endmanage
+
+
+// DASHBOARD
 .jumbotron{
     text-align: center;
 }

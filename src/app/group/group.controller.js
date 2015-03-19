@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('studyBuddy')
-    .controller('GroupCtrl', function($firebaseObject, $firebaseArray, Auth){
+    .controller('GroupCtrl', function($firebaseObject, $firebaseArray, Auth, $state){
     var self = this;
     Auth.onAuth(function(user, authdUser){
         self.user = user;
@@ -15,11 +15,7 @@ angular.module('studyBuddy')
 
     this.addGroup = function(group){
         ref.update(group);
-        return this.newGroup = {
-            subject: '',
-            class: '',
-            section: ''
-        };
+        $state.go('list');
     };
         
     })
