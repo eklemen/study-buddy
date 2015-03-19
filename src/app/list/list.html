@@ -2,9 +2,19 @@
 <div sticky class="input-group col-sm-12"><input ng-model="searchText" placeholder="Search">
 </div>
 <div class="list-view">
+    <div class="top-map">
+        <button class="btn btn-info col-xs-offset-9 col-sm-offset-10" ng-click="isCollapsed = !isCollapsed">View Map</button>
+        <div collapse="!isCollapsed">
+            <div class="well well-lg map">
+                <img class="lib-pic" src="../../assets/images/lib.png">
+            </div> 
+         </div>
+    </div> 
+<!--
     <div class="map">
         <img class="lib-pic" src="../../assets/images/lib.png">
     </div>
+-->
     <div class="panel panel-info">
         <div class="panel-heading">
             <h3 class="panel-title">Active Groups</h3>
@@ -15,7 +25,7 @@
                     <td>{{group.subject}}</td>
                     <td>{{group.class}}</td>
                     <td>
-                        <span class="dropdown" dropdown on-toggle="toggled(open)">
+                        <span class="dropup" dropdown on-toggle="toggled(open)">
                             <a href class="dropdown-toggle" dropdown-toggle>
                         {{group.section}}
                             </a>

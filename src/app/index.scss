@@ -50,6 +50,12 @@ a:hover {
     }
     
     .list-view{
+        .top-map {
+            margin: 4ex 0;
+            button {
+                
+            }
+        }
         .panel {
             .list {
                 tr{
@@ -60,8 +66,11 @@ a:hover {
                         
                         .dropdown-menu{
                             left: -12em;
+                            a {
+                                padding: 0;
+                            }
                             .popup-map {
-                                height: 28ex;
+                                height: 30ex;
                                 width: 14em;
                             }
                         }
