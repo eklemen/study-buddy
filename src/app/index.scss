@@ -2,6 +2,7 @@ a:hover {
     text-decoration: none;
 }
 
+/* login page */
 #login-box {
     text-align: center;
     position: relative;
@@ -39,22 +40,35 @@ a:hover {
         width: 100%;
     }
 }
-.panel {
-    .list {
-        tr{
-            td{
-                width: 33%;
-                text-align: center;
-                font-weight: bolder;
+.list-view{
+    .panel {
+        .list {
+            tr{
+                td{
+                    width: 33%;
+                    text-align: center;
+                    font-weight: bolder;
+                }
             }
         }
+}
+}
+.manage-page {
+    td{
+        width: 33%;
+        text-align: center;
+        font-weight: bolder;
+    }
+    button {
+        @extend .col-sm-6;
     }
 }
-//td {
+// dashboard 
 .jumbotron{
     text-align: center;
 }
 
+// fade between states
 [ui-view].ng-enter  {
   -webkit-animation: enter_sequence .3s ease-in; /* Safari/Chrome */
 }

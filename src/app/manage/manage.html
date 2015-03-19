@@ -1,14 +1,38 @@
-<div>
-    <span ng-hide="editing">{{manage.obj.subject}}</span>
-    <span ng-hide="editing">{{manage.obj.class}}</span>
-    <span ng-hide="editing">{{manage.obj.section}}</span>
+<div class="manage-page">
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">My Group</h3>
+    </div>
+
+       <table class="table list">
+            <tr>
+                <td ng-hide="editing">{{manage.obj.subject}}</td>
+                <td ng-hide="editing">{{manage.obj.class}}</td>
+                <td ng-hide="editing">{{manage.obj.section}}</td>
+            </tr>
+        </table>   
+<!--
+        <span class="" ng-hide="editing">{{manage.obj.subject}}</span>
+        <span ng-hide="editing">{{manage.obj.class}}</span>
+        <span ng-hide="editing">{{manage.obj.section}}</span>
+-->
+        <form ng-show="editing" ng-submit="manage.edit(manage.update)">
+                <input ng-model="manage.update.subject" type="text" placeholder={{manage.obj.subject}}>
+                <input ng-model="manage.update.class" type="text" placeholder={{manage.obj.class}}>
+                <input ng-model="manage.update.section" type="text" placeholder={{manage.obj.section}}>
+
+        </form>
+</div> 
+
 <!--    <span ng-hide="manage.arr.length<1">You do not have a group active</span>-->
-    <button class="btn btn-primary" ng-hide="editing || manage.arr.length<1" ng-click="editing = true">Edit</button>
-    <button class="btn btn-primary" ng-hide="manage.arr.length<1" ng-click="manage.delete(group)">Delete</button>
-    <form ng-show="editing" ng-submit="manage.edit(manage.update)">
-            <input ng-model="manage.update.subject" type="text" placeholder={{manage.obj.subject}}>
-            <input ng-model="manage.update.class" type="text" placeholder={{manage.obj.class}}>
-            <input ng-model="manage.update.section" type="text" placeholder={{manage.obj.section}}>
-            <button class="btn btn-primary" ng-show="editing" ng-click="editing = false">Save</button>
-    </form>
-</div>
+   
+       <button class="btn btn-info col-xs-6 col-sm-offset-2 col-sm-4 col-md-3" ng-hide="manage.arr.length<1" ng-click="manage.delete(group)">Delete</button>
+    
+        <button class="btn btn-info col-xs-6 col-sm-4 col-md-3" ng-hide="editing || manage.arr.length<1" ng-click="editing = true">Edit</button>
+        
+        <button class="btn btn-info col-xs-6 col-sm-4 col-md-3" ng-show="editing" ng-click="editing = false">Save</button>
+
+        
+
+        
+</div>    

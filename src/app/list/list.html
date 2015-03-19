@@ -1,19 +1,21 @@
-<div sticky class="input-group"><input ng-model="searchText" placeholder="Search"></div>
 
-<div class="map">
-    <img class="lib-pic" src="../../assets/images/lib.png">
+<div sticky class="input-group"><input ng-model="searchText" placeholder="Search"></div>
+<div class="list-view">
+    <div class="map">
+        <img class="lib-pic" src="../../assets/images/lib.png">
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Active Groups</h3>
+        </div>
+        <div ng-repeat="group in list.arr | filter:searchText">
+            <table class="table list">
+                <tr>
+                    <td>{{group.subject}}</td>
+                    <td>{{group.class}}</td>
+                    <td>{{group.section}}</td>
+                </tr>
+            </table>        
+        </div>
+    </div>    
 </div>
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">Active Groups</h3>
-    </div>
-    <div ng-repeat="group in list.arr | filter:searchText">
-        <table class="table list">
-            <tr>
-                <td>{{group.subject}}</td>
-                <td>{{group.class}}</td>
-                <td>{{group.section}}</td>
-            </tr>
-        </table>        
-    </div>
-</div>    
