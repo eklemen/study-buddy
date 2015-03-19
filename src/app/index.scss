@@ -95,10 +95,22 @@ a:hover {
 } //endmanage
 
 
-// DASHBOARD
+/* DASHBOARD */
 .jumbotron{
     text-align: center;
 }
+
+/* NAV */
+.navbar {
+    .container {
+        ul {
+            li {
+                text-align: right;
+            }
+        }
+    }
+}
+
 
 // fade between states
 [ui-view].ng-enter  {
