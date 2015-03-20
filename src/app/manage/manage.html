@@ -4,37 +4,34 @@
         <h3 class="panel-title">My Group</h3>
     </div>
 
-       <table class="table list">
-            <tr>
-                <td ng-hide="editing">{{manage.obj.subject}}</td>
-                <td ng-hide="editing">{{manage.obj.class}}</td>
-                <td ng-hide="editing">{{manage.obj.section}}</td>
-            </tr>
-        </table>   
-<!--
-        <span class="" ng-hide="editing">{{manage.obj.subject}}</span>
-        <span ng-hide="editing">{{manage.obj.class}}</span>
-        <span ng-hide="editing">{{manage.obj.section}}</span>
--->
-        <form ng-show="editing" ng-submit="manage.edit(manage.update)">
-                <input ng-model="manage.update.subject" type="text" placeholder={{manage.obj.subject}}>
-                <input ng-model="manage.update.class" type="text" placeholder={{manage.obj.class}}>
-                <input ng-model="manage.update.section" type="text" placeholder={{manage.obj.section}}>
 
-        </form>
+            <div class="panel-body">
+                <div class="row">
+                    <span class="col-sm-4 col-xs-4" ng-hide="editing">{{manage.obj.subject}}</span>
+                    <span class="col-sm-4 col-xs-4" ng-hide="editing">{{manage.obj.class}}</span>
+                    <span class="col-sm-4 col-xs-4" ng-hide="editing">{{manage.obj.section}}</span>
+                </div>
+            </div>
+            <section class="edit-mode">
+            
+            <form ng-show="editing" ng-submit="manage.edit(manage.update)">
+                <div class="col-xs-4 col-md-4 col-sm-4">
+                    <input class="form-control" ng-model="manage.update.subject" type="text" placeholder={{manage.obj.subject}}>
+                </div>
+                    <div class="col-xs-4 col-md-4 col-sm-4">
+                        <input class="form-control" ng-model="manage.update.class" type="text" placeholder={{manage.obj.class}}>
+                    </div>
+                    <div class="col-xs-4 col-md-4 col-sm-4">   
+                        <input class="form-control" ng-model="manage.update.section" type="text" placeholder={{manage.obj.section}}>
+                    </div>    
+                
+                <button class="btn btn-info col-xs-6 col-sm-offset-2 col-sm-4" ng-show="editing" ng-click="editing = false">Save</button>
+            </form>
+            <button ng-click="editing = true" class="btn btn-info col-xs-6 col-sm-offset-2 col-sm-4" ng-hide="editing || manage.arr.length<1">Edit</button>
+            <button class="btn btn-danger col-xs-6 col-sm-offset-1 col-sm-offset-2 col-sm-4" ng-hide="manage.arr.length<1" ng-click="manage.delete(group)">Delete</button>
+            </section>
+          
 </div> 
 
 <!--    <span ng-hide="manage.arr.length<1">You do not have a group active</span>-->
-   
-       <button class="btn btn-info col-xs-6 col-sm-offset-2 col-sm-4" ng-hide="manage.arr.length<1" ng-click="manage.delete(group)">Delete</button>
-    
-        <button class="btn btn-info col-xs-6 col-sm-4" ng-hide="editing || manage.arr.length<1" ng-click="editing = true">Edit</button>
-        
-        <button class="btn btn-info col-xs-6 col-sm-4" ng-show="editing" ng-click="editing = false">Save</button>
-
-
 </div>    
-
-
-<!-- col-xs-6 col-sm-offset-2 col-sm-4 col-md-3-->
-<!---->

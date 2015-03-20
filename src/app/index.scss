@@ -92,14 +92,21 @@ a:hover {
 
 /* MANAGE */
 .manage-page {
-    td{
+    .edit-mode{
+        overflow: hidden;
+        .btn {
+            margin: 2ex 0;
+        }
+    }
+    
+    .panel-body {
+        span {
         width: 33%;
         text-align: center;
-        font-weight: bolder;
+        font-weight: bolder;   
+        }
     }
-    button {
-        @extend .col-sm-6;
-    }
+    
 } //endmanage
 
 

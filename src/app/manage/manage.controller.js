@@ -11,7 +11,7 @@ angular.module('studyBuddy')
     var myRef = new Firebase('https://study-buddy.firebaseio.com/groups/' + self.user.$id);
     this.obj = $firebaseObject(myRef);
     this.arr = $firebaseArray(myRef);
-    
+
     this.update = {};
     this.edit = function(info){
         myRef.update(info);
