@@ -13,16 +13,18 @@
                 <input class="form-control" type="text" value="class" ng-model="groups.newGroup.class" required>
             </div>
             <div class="form-group col-md-4">
-                <label for="select">Section of Library</label>
-                <select class="form-control sections" value="select" ng-model="groups.newGroup.section" required>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-
+                <label for="area">Area of Library</label>
+                <select class="form-control sections" value="area" ng-model="groups.newGroup.area" required>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
                 </select>
-                <select class="form-control" value="select" ng-model="groups.newGroup.area">
-                    <option ng-repeat="myg in groups.mySection(groups.newGroup.section)">{{myg}}</option>
+                
+<!--selection depending on choice of above-->
+                <label for="section">Area of Library</label>
+                <select class="form-control" value="select" ng-model="groups.newGroup.section" value="section" required>
+                    <option ng-repeat="myg in groups.mySection(groups.newGroup.area)">{{myg}}</option>
                 </select>
             </div>
             <button class="submit btn btn-info pull-right">Submit</button>

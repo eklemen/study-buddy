@@ -19,15 +19,22 @@
         <div class="panel-heading">
             <h3 class="panel-title">Active Groups</h3>
         </div>
-        <div ng-repeat="group in list.arr | filter:searchText">
+        <div>
             <table class="table list">
-                <tr>
+                <thead>
+                    <tr>
+                       <th>Subject</th>
+                       <th>Course</th>
+                       <th>Location (click to see map)</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="group in list.arr | filter:searchText">
                     <td>{{group.subject}}</td>
                     <td>{{group.class}}</td>
                     <td>
                         <span class="dropup" dropdown on-toggle="toggled(open)">
                             <a href class="dropdown-toggle" dropdown-toggle>
-                        {{group.section}}
+                                {{group.area}} - {{group.section}}
                             </a>
                             <ul class="dropdown-menu">
                                 <li>

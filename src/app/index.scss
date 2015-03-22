@@ -67,6 +67,15 @@ a:hover {
         }
         .panel {
             .list {
+                thead{
+                    tr{
+                        th{
+                            color: #777;
+                            font-size: 1.1em;
+                            text-align: center; 
+                        }
+                    }
+                }
                 tr{
                     td{
                         width: 33%;

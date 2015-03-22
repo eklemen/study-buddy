@@ -16,16 +16,18 @@ angular.module('studyBuddy')
     this.groupA = ["1", "2", "3"];
     this.groupB = ["1", "2", "3", "4"];
     this.mySection = function(sec) {
-        if(sec == "A"){
+        if(sec == "A" || sec == "D"){
             return self.groupA;
-        } else {
+        } else if(sec == "B" || sec == "C"){
             return self.groupB;
+        } else {
+            return "";
         }
     }
 
     this.addGroup = function(group){
         ref.update(group);
-        $state.go('list');
+        $state.go('manage');
     };
         
     })
