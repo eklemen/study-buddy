@@ -12,6 +12,16 @@ angular.module('studyBuddy')
     
         this.newGroup = {
         };
+        
+    this.groupA = ["1", "2", "3"];
+    this.groupB = ["1", "2", "3", "4"];
+    this.mySection = function(sec) {
+        if(sec == "A"){
+            return self.groupA;
+        } else {
+            return self.groupB;
+        }
+    }
 
     this.addGroup = function(group){
         ref.update(group);
