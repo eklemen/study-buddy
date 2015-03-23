@@ -1,6 +1,40 @@
 a:hover {
     text-decoration: none;
 }
+.banner-box{
+    position: relative;
+    .banner-title {
+        position: absolute;
+        top: -9ex;
+        color: white;
+        text-shadow: -2px 2px 2px #222222;
+        z-index: 999;
+    }
+}
+.dash-icons:before {
+    font-size: 2em;
+}
+.welcome {
+    font-size: 2em;
+}
+.dashboard-box {
+    button{
+        width: 17em;
+        border-radius: 0;
+    }
+    .taglines{
+        font-size: 1.2em;
+    }
+}
+
+.background {
+    background-image: url(../assets/images/books.jpg);
+    background-size: cover;
+    background-position-x: 40%;
+    background-position-y: 50%;
+    height: 30ex;
+    margin-bottom: 3ex;
+}
 
 /* login page */
 #login-box {
@@ -138,7 +172,9 @@ a:hover {
 
 /* NAV */
 .navbar {
-    .container {
+    margin-bottom: 0;
+    .container-fluid {
+        padding: 1.5ex;
         ul {
             li {
                 text-align: right;

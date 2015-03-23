@@ -1,8 +1,13 @@
-<p>{{'Hello'}} {{dash.user.name}}!</p>
-<div class="jumbotron">
-<button class="btn btn-info">
-    <a ui-sref="group">Create a Group</a></button>
-<button class="btn btn-info">
-    <a ui-sref="list">Look for a Group</a>
+<div class="banner-box">
+    <h2 class="banner-title">Welcome to Study-Buddy</h2>
+</div>
+<p class="welcome">{{'Hello'}} {{dash.user.name}}!</p>
+<div class="jumbotron dashboard-box">
+<button ui-sref="group" class="btn btn-info">
+    <p class="dash-icons fa fa-group"></p>
+    <p class="taglines">Create a Group</p></button>
+<button ui-sref="list" class="btn btn-info">
+    <p class="dash-icons fa fa-search"></p>
+    <p class="taglines">Look for a Group</p>
 </button>
 </div>
