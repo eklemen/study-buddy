@@ -3,11 +3,13 @@
 </div>
 <p class="welcome">{{'Hello'}} {{dash.user.name}}!</p>
 <div class="jumbotron dashboard-box">
-<button ui-sref="group" class="btn btn-info">
-    <p class="dash-icons fa fa-group"></p>
-    <p class="taglines">Create a Group</p></button>
-<button ui-sref="list" class="btn btn-info">
-    <p class="dash-icons fa fa-search"></p>
-    <p class="taglines">Look for a Group</p>
-</button>
+    <div class="btn-group">
+        <button ui-sref="group" class="btn btn-info">
+            <p class="dash-icons fa fa-group"></p>
+            <p class="taglines">Create a Group</p></button>
+        <button ui-sref="list" class="btn btn-info">
+            <p class="dash-icons fa fa-search"></p>
+            <p class="taglines">Look for a Group</p>
+        </button>
+    </div>    
 </div>
