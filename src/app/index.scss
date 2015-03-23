@@ -1,9 +1,22 @@
+$green: #398974;
+$green-hover: #1D6250;
+$blue: #436380;
+$blue-hover: #2f5474;
+$delete: #B13331;
+$delete-hover: #8e2624;
+
 a:hover {
     text-decoration: none;
+}
+
+.container{
+    font-family: 'Roboto', sans-serif;
 }
 .banner-box{
     position: relative;
     .banner-title {
+        font-family: 'Roboto Slab', serif;
+        text-transform: uppercase;
         position: absolute;
         top: -9ex;
         color: white;
@@ -12,15 +25,26 @@ a:hover {
     }
 }
 .dash-icons:before {
-    font-size: 2em;
+    font-size: 2.3em;
     margin: 1ex 0;
 }
 .welcome {
     font-size: 2em;
+    font-family: 'Roboto', sans-serif;
 }
 .dashboard-box {
+    background-color:#DFF2EC;
+    .dash-icons{
+        margin-top: 1ex;
+    }
     button{
+        background-color: $green;
+        border: none;
         width: 17em;
+        margin: 1ex 1em;
+    }
+    button:hover {
+        background-color: $green-hover;
     }
     .taglines{
         font-size: 1.2em;
@@ -102,11 +126,20 @@ a:hover {
     .list-view{
         .top-map {
             margin: 4ex 0;
-            button {
-                
+            .btn {
+                background-color: $green;
+                border: none;
+            }
+            .btn:hover{
+                background-color: $green-hover;
             }
         }
         .panel {
+            border: solid $green 1px;
+            .panel-heading{
+                background-color: $green;
+                color: white;
+            }
             .list {
                 thead{
                     tr{
@@ -150,7 +183,18 @@ a:hover {
         .buttons {
             padding: 2ex 0;
             button{
+                border: none;
+                background-color: $blue;
                 width: 100%;
+            }
+            button:hover{
+                background-color: $blue-hover;
+            }
+            .delete{
+                background-color: $delete;
+            }
+            .delete:hover{
+                background-color: $delete-hover;
             }
         }
         overflow: hidden;
@@ -158,7 +202,12 @@ a:hover {
 //            margin: 2ex 0;
 //        }
     }
-    
+    .panel-heading {
+        .panel-title{
+            color: white;
+        }
+        background-color: #5785AE;
+    }
     .panel-body {
         span {
         width: 33%;
@@ -179,9 +228,13 @@ a:hover {
 .navbar {
     margin-bottom: 0;
     .container-fluid {
+        .navbar-brand{
+            font-family: 'Roboto Slab', serif;
+        }
         padding: 1.5ex;
         ul {
             li {
+                font-family: 'Roboto', sans-serif;
                 text-align: right;
             }
         }
@@ -230,8 +283,8 @@ a:hover {
         }
     }
 
+    }
 }
-
 // injector
 // endinjector
 
