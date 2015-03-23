@@ -37,8 +37,15 @@
                                 {{group.area}} - {{group.section}}
                             </a>
                             <ul class="dropdown-menu">
-                                <li>
-                                    <a href><img class="popup-map" src="/assets/images/lib.png"></a>
+                                <li ng-switch on="group.area">
+                                    <img class="popup-map" 
+                                    ng-switch-when="A" src="assets/images/libA.JPEG">
+                                    <img class="popup-map"
+                                    ng-switch-when="B" src="assets/images/libB.JPEG">
+                                    <img class="popup-map"
+                                    ng-switch-when="C" src="assets/images/libC.JPEG">
+                                    <img class="popup-map"
+                                    ng-switch-when="D" src="assets/images/libD.JPEG">
                                 </li>
                             </ul>
                         </span>
@@ -49,6 +56,8 @@
     </div>    
 </div>
 </div>
+
+<!--{{group.area == 'A' && 'assets/images/lib.png' || group.area == 'B' && 'assets/images/lib.png'}}-->
 
 
 <!-- </span>{{group.section}}</td>-->

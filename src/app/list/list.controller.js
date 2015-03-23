@@ -9,6 +9,11 @@ angular.module('studyBuddy')
     var ref = new Firebase('https://study-buddy.firebaseio.com/groups/');
     var myRef = new Firebase('https://study-buddy.firebaseio.com/groups/' + self.user.$id);
     this.arr = $firebaseArray(ref);
+    this.libLocation = function(area){
+        if(area == "A"){
+            return "assets/images/lib.png"
+        }
+    }
     
     console.log('banana');
     
