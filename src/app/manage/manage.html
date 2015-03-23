@@ -15,23 +15,29 @@
             <section class="edit-mode">
             
             <form ng-show="editing" ng-submit="manage.edit(manage.update)">
-                <div class="col-xs-3 col-md-3 col-sm-3">
+                <div class="col-xs-3 col-md-3 col-sm-3 input-boxes">
                     <input class="form-control" ng-model="manage.update.subject" type="text" placeholder={{manage.obj.subject}}>
                 </div>
-                    <div class="col-xs-3 col-md-3 col-sm-3">
+                    <div class="col-xs-3 col-md-3 col-sm-3 input-boxes">
                         <input class="form-control" ng-model="manage.update.class" type="text" placeholder={{manage.obj.class}}>
                     </div>
-                    <div class="col-xs-3 col-md-3 col-sm-3">   
+                    <div class="col-xs-3 col-md-3 col-sm-3 input-boxes">   
                         <input class="form-control" ng-model="manage.update.area" type="text" placeholder={{manage.obj.area}}>
                     </div> 
-                    <div class="col-xs-3 col-md-3 col-sm-3">   
+                    <div class="col-xs-3 col-md-3 col-sm-3 input-boxes">   
                         <input class="form-control" ng-model="manage.update.section" type="text" placeholder={{manage.obj.section}}>
                     </div>    
                 
-                <button class="btn btn-info col-xs-6 col-sm-offset-2 col-sm-4" ng-show="editing" ng-click="editing = false">Save</button>
+                <div class="col-sm-3 col-sm-offset-2 buttons save-button">
+                    <button class="btn btn-info" ng-show="editing" ng-click="editing = false">Save</button>
+                </div>
             </form>
-            <button ng-click="editing = true" class="btn btn-info col-xs-6 col-sm-offset-2 col-sm-4" ng-hide="editing || manage.arr.length<1">Edit</button>
-            <button class="btn btn-danger col-xs-6 col-sm-offset-1 col-sm-offset-2 col-sm-4" ng-hide="manage.arr.length<1" ng-click="manage.delete(group)">Delete</button>
+            <div class="col-sm-3 col-sm-offset-2 buttons">
+                <button ng-click="editing = true" class="btn btn-info" ng-hide="editing || manage.arr.length<1">Edit</button>
+            </div>
+            <div class="col-sm-3 col-sm-offset-2 buttons">
+                <button class="btn btn-danger" ng-hide="manage.arr.length<1" ng-click="manage.delete(group)">Delete</button>
+            </div>    
             </section>
           
 </div> 

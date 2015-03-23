@@ -51,7 +51,6 @@ angular.module('studyBuddy', ['ngAnimate', 'restangular', 'ui.router', 'ui.boots
             
             fbLogin: function(){
                 return auth.authWithOAuthPopup("facebook", function(error, authData) {
-                    console.log(authData)
                 if (error) {
                     console.log("Login Failed!", error);
                 } else {
@@ -87,7 +86,7 @@ angular.module('studyBuddy', ['ngAnimate', 'restangular', 'ui.router', 'ui.boots
         // sending this info to firebase updating user info
         user.update({
             uid: authdUser.facebook.id,
-            fb: authdUser.facebook,
+//            fb: authdUser.facebook,
             name: fbCach.first_name,
             photo: fbCach.picture.data.url
         });

@@ -23,7 +23,9 @@ a:hover {
 /* GROUP */
 .group-view {
     form {
+        
         .submit {
+            margin-top: 1ex;
             margin-right: 1em;
         }
     }
@@ -103,10 +105,19 @@ a:hover {
 /* MANAGE */
 .manage-page {
     .edit-mode{
-        overflow: hidden;
-        .btn {
-            margin: 2ex 0;
+        .save-button{
+            margin-top: 4.1ex;
         }
+        .buttons {
+            padding: 2ex 0;
+            button{
+                width: 100%;
+            }
+        }
+        overflow: hidden;
+//        .btn {
+//            margin: 2ex 0;
+//        }
     }
     
     .panel-body {
@@ -146,27 +157,28 @@ a:hover {
   to { opacity:1; }
 }
 
+@media (max-width: 767px){
+    .manage-page {
+    .edit-mode{
+        .panel-body{
+            padding: 8px;
+        }
+        .input-boxes{
+            margin-bottom: 1ex;
+        }
+        
+            .save-button{
+                margin-top: 0;
+            }
+        .buttons {
+            padding: 0;
+            margin: 1ex 0;
+        }
+        }
+    }
+}
+
 // injector
 // endinjector
 
 
-//.browsehappy {
-//  margin: 0.2em 0;
-//  background: #ccc;
-//  color: #000;
-//  padding: 0.2em 0;
-//}
-//
-//.navbar-inverse .navbar-nav li a:hover {
-//	background-color: #313131;
-//	transition: 0.3s all linear;
-////	height: 100%;
-//}
-//
-//.thumbnail {
-//  height: 200px;
-//
-//  img.pull-right {
-//    width: 50px;
-//  }
-//}
