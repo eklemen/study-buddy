@@ -37,9 +37,12 @@ a:hover {
 }
 
 /* login page */
-#login-box {
-    text-align: center;
+.login-banner{
     position: relative;
+    top: -27ex;
+    #login-box {
+        text-align: center;
+        position: relative;
     #login {
         .glyphicon {
             font-size: 10em;
@@ -52,6 +55,8 @@ a:hover {
             color: white;
         }
     }
+}
+
 }
 
 /* GROUP */
