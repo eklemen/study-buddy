@@ -90,6 +90,11 @@ a:hover {
         .submit {
             margin-top: 1ex;
             margin-right: 1em;
+            border: none;
+            background-color: $blue;
+        }
+        .submit:hover{
+            background-color: $blue-hover;
         }
     }
     .map {
@@ -227,18 +232,17 @@ a:hover {
 /* NAV */
 .navbar {
     margin-bottom: 0;
-    .container-fluid {
+    padding: 1.5ex;
         .navbar-brand{
             font-family: 'Roboto Slab', serif;
         }
-        padding: 1.5ex;
-        ul {
+        .navbar-right{
+            margin-right: 1em;
             li {
                 font-family: 'Roboto', sans-serif;
                 text-align: right;
             }
         }
-    }
 }
 
 
