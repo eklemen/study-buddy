@@ -1,5 +1,5 @@
 {
-  "firebase": "study-buddy",
+  "firebase": "studybuddy",
   "public": "dist/",
   "ignore": [
     "firebase.json",
