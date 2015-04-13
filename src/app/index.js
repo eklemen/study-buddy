@@ -57,7 +57,8 @@ angular.module('studyBuddy', ['ngAnimate', 'restangular', 'ui.router', 'ui.boots
                     $state.go('dashboard');
                     console.log("Authenticated successfully");
                 }
-                }, {remember: "sessionOnly"})
+                })
+//                , {remember: "sessionOnly"}
             },
             
             logout: function(){

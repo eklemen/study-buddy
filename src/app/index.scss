@@ -63,7 +63,7 @@ a:hover {
 /* login page */
 .login-banner{
     position: relative;
-    top: -27ex;
+    top: -5ex;
     blockquote{
         border-left: 5px solid $blue;
         margin-top: 4em;
@@ -72,13 +72,17 @@ a:hover {
         text-align: center;
         position: relative;
     #login {
-        .glyphicon {
+        position: relative;
+        .glyphicon-book {
+            position: absolute;
+            top: -2.3ex;
             font-size: 10em;
+            left: -0.7em;
         }
         .fa {
             position: absolute;
             right: 46%;
-            top: 1ex;
+            top: -4ex;
             font-size: 6em;
             color: white;
         }
