@@ -61,6 +61,17 @@ angular.module('studyBuddy', ['ngAnimate', 'restangular', 'ui.router', 'ui.boots
 //                , {remember: "sessionOnly"}
             },
             
+            tLogin: function(){
+                return auth.authWithOAuthPopup("twitter", function(error, authData){
+                    if (error){
+                        console.log("Login Failed!", error);
+                    } else {
+                        $state.go('dashboard');
+                        console.log("Authenticated successfully")
+                    }
+                })
+            },
+            
             logout: function(){
                 auth.unauth();
                 $state.go('home');

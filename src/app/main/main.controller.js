@@ -8,6 +8,7 @@ angular.module('studyBuddy')
         this.userArray = {};
         
     this.fbLogin = Auth.fbLogin;
+    this.tLogin = Auth.tLogin;
     
     Auth.onAuth(function(user){
         self.user = user;

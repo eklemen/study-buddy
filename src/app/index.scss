@@ -1,3 +1,4 @@
+//@import '../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 $green: #398974;
 $green-hover: #1D6250;
 $blue: #436380;
@@ -65,6 +66,7 @@ a:hover {
     position: relative;
     top: -5ex;
     blockquote{
+//        @extend .col-sm-2;
         border-left: 5px solid $blue;
         margin-top: 4em;
     }
