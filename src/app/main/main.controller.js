@@ -10,6 +10,7 @@ angular.module('studyBuddy')
     this.fbLogin = Auth.fbLogin;
     this.tLogin = Auth.tLogin;
     
+    
     Auth.onAuth(function(user){
         self.user = user;
         if(user === null){

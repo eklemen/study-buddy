@@ -19,6 +19,7 @@ angular.module('studyBuddy')
     };
     this.delete = function(group){
         myRef.remove(group);
-    }
+    };
+    
 })
 ; //end controller

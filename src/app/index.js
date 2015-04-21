@@ -88,10 +88,10 @@ angular.module('studyBuddy', ['ngAnimate', 'restangular', 'ui.router', 'ui.boots
         }; //end return
     
     function updateUser(authdUser){
-//        console.log(authdUser)
+//        console.log(authdUser.provider)
         if(authdUser === null){
             return null;
-        }
+        } else if (authdUser.provider === "facebook"){
         //way to set facebookID as a child of users in fb object
         var user = auth.child(authdUser.facebook.id); 
         var fbCach = authdUser.facebook.cachedUserProfile;
@@ -107,7 +107,26 @@ angular.module('studyBuddy', ['ngAnimate', 'restangular', 'ui.router', 'ui.boots
             auth.child(authdUser.facebook.id)
         );
         return user;
-    }
+            
+        } else if (authdUser.provider === "twitter") {
+        var user = auth.child(authdUser.twitter.id);
+        var twCach = authdUser.twitter.cachedUserProfile;    
+        // gather twitter info    
+        user.update({
+//            tw: authdUser.twitter,
+            uid: authdUser.twitter.id,
+            name: twCach.name,
+            photo: twCach.profile_image_url
+        });
+        
+        // update this info in firebase
+        user = $firebaseObject(
+        auth.child(authdUser.twitter.id)
+        );
+        return user;
+        } // end else if
+        
+    } //end updateUser
     
 }) //end auth factory
 
