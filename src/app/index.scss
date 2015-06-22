@@ -1,3 +1,4 @@
+// @import '../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 $green: #398974;
 $green-hover: #1D6250;
 $blue: #436380;
@@ -22,6 +23,13 @@ a:hover {
         color: white;
         text-shadow: -2px 2px 2px #222222;
         z-index: 999;
+        //  below is to add black background
+        // background-color: black;
+        // padding-left: 6em;
+        // padding: 1ex 1em 1ex 6em;
+        // left: -4em;
+        // border-radius: 0.4ex;
+
     }
 }
 .dash-icons:before {
@@ -63,29 +71,29 @@ a:hover {
 /* login page */
 .login-banner{
     position: relative;
-    top: -27ex;
+    top: -5ex;
     blockquote{
+        // @extend .col-sm-2;
         border-left: 5px solid $blue;
-        margin-top: 4em;
     }
     #login-box {
         text-align: center;
         position: relative;
-    #login {
-        .glyphicon {
-            font-size: 10em;
-        }
+        top: -8em;
+        background-color: white;
+        border-radius: 0.5ex;
         .fa {
-            position: absolute;
-            right: 46%;
-            top: 1ex;
-            font-size: 6em;
-            color: white;
+            font-size: 3em;
+            margin: 0 0.5em;
+            color: $blue;
+        }
+        .fa:hover {
+            cursor: pointer;
+            color: $blue-hover;
         }
     }
 }
 
-}
 
 /* GROUP */
 .group-view {
@@ -208,9 +216,9 @@ a:hover {
             }
         }
         overflow: hidden;
-//        .btn {
-//            margin: 2ex 0;
-//        }
+        // .btn {
+        //     margin: 2ex 0;
+        // }
     }
     .panel-heading {
         .panel-title{
@@ -251,7 +259,7 @@ a:hover {
 }
 
 
-// fade between states
+ /*fade between states*/
 [ui-view].ng-enter  {
   -webkit-animation: enter_sequence .3s ease-in; /* Safari/Chrome */
 }
