@@ -17,12 +17,12 @@
         </div>
         <div>
             <div class="table list">
-                <div>
+                <div class="table-title">
                    <div class="col-xs-4 thead">Course</div>
                    <div class="col-xs-4 thead">Instructor</div>
                    <div class="col-xs-4 thead">Location (click to see map)</div>
                 </div>
-                <div ng-repeat="group in list.arr | filter:searchText">
+                <div class="table-info" ng-repeat="group in list.arr | filter:searchText">
                     <div class="row">
                         <div class="col-xs-4" ng-click="showDetail =! showDetail">
                             {{group.class | uppercase}}
@@ -52,7 +52,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="row" ng-show="showDetail">
+                    <div class="row detail" ng-show="showDetail">
                         <div class="col-xs-12">{{group.detail}}</div>
                     </div>
                     <hr>

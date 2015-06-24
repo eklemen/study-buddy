@@ -159,23 +159,25 @@ a:hover {
                 color: white;
             }
             .list {
-                thead{
-                    tr{
-                        th{
-                            color: #777;
-                            font-size: 1.1em;
-                            text-align: center; 
-                        }
+                .table-title{
+                    .thead{
+                        color: #777;
+                        font-size: 1.1em;
+                        text-align: center; 
                     }
                 }
-                tr{
-                    td{
-                        width: 33%;
+                .table-info{
+                    .row{
                         text-align: center;
                         font-weight: bolder;
-                        
+                        .col-xs-4{
+                            .view-more{
+                                margin-right: -1ex;
+                            }
+                        }
                         .dropdown-menu{
-                            left: -12em;
+                            left: -16em;
+                            top: -10em;
                             a {
                                 padding: 0;
                             }
@@ -184,6 +186,10 @@ a:hover {
                                 width: 14em;
                             }
                         }
+                    }
+                    .detail{
+                        font-weight: normal;
+                        padding-top: 1ex;
                     }
                 }
             }
